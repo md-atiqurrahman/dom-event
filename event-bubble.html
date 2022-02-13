@@ -44,7 +44,11 @@
         })
         //section 
         document.getElementById('section-container').addEventListener('click',function(){
-            console.log('section is clicked');
+           console.log('section is clicked');
+        })
+        //section with dblclick event
+        document.getElementById('section-container').addEventListener('dblclick',function(){
+            document.getElementById('section-container').style.backgroundColor = 'lightcoral';
         })
 
     </script>
