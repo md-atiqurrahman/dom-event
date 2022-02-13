@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+</head>
+<body>
+    <h1>Add comments by using javascript</h1>
+
+    <section>
+        <h3>your comments</h3>
+        <div id="comment-container">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam quos est ullam sed, amet consequatur deserunt, aut quisquam, quidem voluptatibus rerum pariatur? Natus est repellat fuga minima ratione sint voluptas?</p>
+            <p>Molestiae iure tempora laudantium et maiores, nemo esse ipsum quibusdam voluptates rerum, vero in, unde velit sequi architecto rem cupiditate fugit numquam? Numquam, nemo. Mollitia repellat quidem incidunt impedit omnis?</p>
+            <p>Voluptatum veniam repellendus nostrum tempore eaque ab molestias quibusdam autem eligendi magni vel similique modi fugit dolore, reiciendis incidunt. Dolor ullam aspernatur iste voluptas totam voluptatum dolorem incidunt eos ipsum?</p>
+        </div>
+        <div>
+            <textarea name="" id="comment-text" cols="60" rows="4"></textarea>
+            <br>
+            <button id="post-comment">post</button>
+        </div>
+    </section>
+
+    <script>
+        //1.add event handler
+        document.getElementById('post-comment').addEventListener('click', function(){
+            //2.get the textarea value
+            const commentText = document.getElementById('comment-text');
+            const comment = commentText.value;
+
+            //3.create a paragraph
+            const p = document.createElement('p');
+            p.innerText = comment;
+
+            //4. append the child 
+             const commentContainer = document.getElementById('comment-container');
+             commentContainer.appendChild(p);
+
+             //5.remove the textarea value
+             commentText.value = '';
+        })
+    </script>
+</body>
+</html>

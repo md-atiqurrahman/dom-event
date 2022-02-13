@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="set-text"></p>
+    <input type="text" name="" id="get-value">
+
+    <button id="update-details">update</button>
+
+      <!-- add handler by calling a function -->
+    <button onclick="setHandler()">just click</button>
+
+    <!-- add handler by direct shortcut -->
+    <button id="shortcut">click me now</button>
+
+
+
+
+    <script>
+       function setHandler(){
+           const p = document.getElementById('set-text');
+           p.innerText = 'set by call a function';
+       }
+
+    //    add handler by direct shortcut
+    document.getElementById('shortcut').addEventListener('click', function(){
+        const p = document.getElementById('set-text');
+        p.innerText = 'set text by direct shortcut';
+    })
+
+
+    //update
+    document.getElementById('update-details').addEventListener('click', function(){
+        const getInput = document.getElementById('get-value');
+
+        const p = document.getElementById('set-text');
+        p.innerText = getInput.value;
+        getInput.value = '';
+      
+    })
+    </script>
+</body>
+</html>
